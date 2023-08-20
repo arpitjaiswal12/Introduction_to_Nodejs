@@ -1,0 +1,11 @@
+{
+  "name": "node-js-module",
+  "version": "1.0.0",
+  "description": "This module contain the fundamental of NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arpit Jaiswal",
+  "license": "ISC"
+}
