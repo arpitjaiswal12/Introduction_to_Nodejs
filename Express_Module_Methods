@@ -1,0 +1,60 @@
+The Express module provides a number of methods for routing, middleware, rendering templates, and managing applications.
+
+Here are some of the most common methods:
+
+•	app.get(path, handler): This method is used to define a route that responds to GET requests. The path parameter is the URL path that the route will match, and the handler parameter is a function that will be executed when the route is matched.
+
+app.get(path, callback [, callback ...])
+Routes HTTP GET requests to the specified path with the specified callback functions.
+Example
+app.get('/', function (req, res){
+  res.send('GET request to homepage')
+})
+
+•	app.post(path, handler): This method is similar to app.get(), but it is used to define a route that responds to POST requests.
+
+app.post(path, callback [, callback ...])
+Routes HTTP POST requests to the specified path with the specified callback functions. For more information, see the routing guide.
+Example
+app.post('/', function (req, res) {
+  res.send('POST request to homepage')
+})
+
+•	app.put(path, handler): This method is similar to app.get(), but it is used to define a route that responds to PUT requests.
+
+app.put(path, callback [, callback ...])
+Routes HTTP PUT requests to the specified path with the specified callback functions.w
+Example
+app.put('/', function (req, res) {
+  res.send('PUT request to homepage')
+})
+
+•	app.delete(path, handler): This method is similar to app.get(), but it is used to define a route that responds to DELETE requests.
+•	app.use(middleware): This method is used to register middleware for the application. Middleware is a function that is executed before or after each request.
+•	app.render(path, data): This method is used to render a template. The path parameter is the path to the template file, and the data parameter is an object that contains the data that will be passed to the template.
+•	app.listen(port): This method is used to start the application listening on the specified port.
+
+app.listen([port[, host[, backlog]]][, callback])
+Binds and listens for connections on the specified host and port. This method is identical to Node's http.Server.listen().
+
+If port is omitted or is 0, the operating system will assign an arbitrary unused port, which is useful for cases like automated tasks (tests, etc.).
+
+var express = require('express')
+var app = express()
+app.listen(3000)
+The app returned by express() is in fact a JavaScript Function, designed to be passed to Node's HTTP servers as a callback to handle requests. This makes it easy to provide both HTTP and HTTPS versions of your app with the same code base, as the app does not inherit from these (it is simply a callback):
+
+var express = require('express')
+var https = require('https')
+var http = require('http')
+var app = express()
+
+http.createServer(app).listen(80)
+https.createServer(options, app).listen(443)
+The app.listen() method returns an http.Server object and (for HTTP) is a convenience method for the following:
+
+app.listen = function () {
+  var server = http.createServer(this)
+  return server.listen.apply(server, arguments)
+}
+
