@@ -1,0 +1,28 @@
+HTTP error codes are used to indicate the status of an HTTP request. They are three-digit codes that are divided into five categories:
+
+1xx: Informational responses
+2xx: Successful responses
+3xx: Redirection messages
+4xx: Client error responses
+5xx: Server error responses
+
+1. Informational responses (100 – 199)
+2. Successful responses (200 – 299)
+3. Redirection messages (300 – 399)
+4. Client error responses (400 – 499)
+5. Server error responses (500 – 599)
+some of the most common HTTP error codes:
+
+200 OK: The request has succeeded.
+400 Bad Request: The request was malformed or could not be understood.
+401 Unauthorized: The request requires authentication.
+403 Forbidden: The request is forbidden.
+404 Not Found: The requested resource could not be found.
+500 Internal Server Error: The server encountered an error while processing the request.
+503 Service Unavailable: The server is temporarily unavailable.
+
+Informational responses (1xx): These codes are used to indicate that the request is still in progress. They are not errors, but they can be used to provide more information about the status of the request.
+Successful responses (2xx): These codes indicate that the request has been successfully processed.
+Redirection messages (3xx): These codes are used to tell the client to take some action in order to complete the request. For example, a 302 redirect might tell the client to follow a new URL.
+Client error responses (4xx): These codes indicate that the client made an error in the request.
+Server error responses (5xx): These codes indicate that the server encountered an error while processing the request.
